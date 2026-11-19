@@ -11,7 +11,7 @@ public class tablaMultiplicar {
         System.out.println("Seleccione una opción: ");
     }
 
-    static void tablaMultiplicar(int numero, int limite) {
+    static void tablasMultiplicar(int numero, int limite) {
         for (int i = 1; i <= limite; i++) {
             System.out.println(numero + " X " + i + " = " + (numero * i));
         }
@@ -28,7 +28,7 @@ public class tablaMultiplicar {
         System.out.println("Hasta donde desea miltiplicar: ");
         int limite = sc.nextInt();
         if (validarNumeros(numero, limite)) {
-            tablaMultiplicar(numero, limite);
+            tablasMultiplicar(numero, limite);
         } else {
             System.out.println("Error, el número debe de ser mayor a 0");
         }
