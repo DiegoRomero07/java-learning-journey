@@ -1,7 +1,7 @@
 package Metodos;
 
 public class CajeroAutomatico {
-    static int mostrarMenu(int opcion){
+    static int mostrarMenu(int opcion) {
         System.out.println("""
                 1. Consultar saldo
                 2. Depositar dinero
@@ -9,27 +9,27 @@ public class CajeroAutomatico {
                 4. Consultar movimientos
                 5. Salir
                 """);
-        System.out.println("Seleccione una opción: " +opcion);
+        System.out.println("Seleccione una opción: " + opcion);
         return opcion;
     }
 
     static double saldo = 100000;
     static String movimientos = "";
 
-    static void consultarSaldo(){
+    static void consultarSaldo() {
         System.out.println("Su saldo es: " + saldo);
     }
 
-    static boolean validarDeposito(double depositar){
+    static boolean validarDeposito(double depositar) {
         return depositar > 0;
     }
 
-    static boolean validarRetiro(double retiro){
-       return retiro > 0 && retiro <= saldo;
+    static boolean validarRetiro(double retiro) {
+        return retiro > 0 && retiro <= saldo;
     }
 
-    static double depositar(double cantidad){
-        if(validarDeposito(cantidad)){
+    static double depositar(double cantidad) {
+        if (validarDeposito(cantidad)) {
             saldo += cantidad;
             movimientos += "Deposito: " + cantidad + "\n";
             return saldo;
@@ -38,24 +38,25 @@ public class CajeroAutomatico {
             return saldo;
         }
     }
-    static double retirar(double cantidad){
-        if(validarRetiro(cantidad)){
+
+    static double retirar(double cantidad) {
+        if (validarRetiro(cantidad)) {
             saldo -= cantidad;
             movimientos += "Retiro: " + cantidad + "\n";
             return saldo;
-        } else{
+        } else {
             System.out.println("No puede retirar mas del saldo actual!!!!");
             return saldo;
         }
     }
 
-    static void consultarMovimientos(){
+    static void consultarMovimientos() {
         System.out.println("Historial de movimientos: ");
         System.out.println(movimientos);
     }
 
     public static void main(String[] args) {
-        switch (mostrarMenu(4)){
+        switch (mostrarMenu(4)) {
             case 1:
                 consultarSaldo();
                 break;
